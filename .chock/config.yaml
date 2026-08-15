@@ -1,0 +1,10 @@
+chock:
+  version: 0.0.1
+  supported_agents: [claude, copilot, gemini]
+  agent_agnostic: false
+  onboarded_at: 2026-08-15 19:59:33.918626+00:00
+  defaults:
+    protected_branches: [main, master]
+policies:
+  disabled: []
+  overrides: {}
