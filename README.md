@@ -1,13 +1,22 @@
+<div align="center">
+
 <img src=".github/logo.svg" alt="Chock logo" width="90">
 
 # chock-quickstart
 
-> **Demo repository.** This repo exists so you can *see* what [Chock](https://github.com/open-coder-ai/chock)
-> adoption looks like — nothing more. Questions and issues belong on the
-> [framework repo](https://github.com/open-coder-ai/chock/issues); this one is a frozen exhibit.
+**Exactly what one [Chock](https://github.com/open-coder-ai/chock) command leaves behind in an empty repository.**
+
+[the framework →](https://github.com/open-coder-ai/chock) ·
+[the full catalog →](https://github.com/open-coder-ai/chock-catalog) ·
+[with policies installed →](https://github.com/open-coder-ai/chock-example)
+
+</div>
+
+> **Demo repository.** A frozen exhibit of `chock init`, nothing more. Questions and issues
+> belong on the [framework repo](https://github.com/open-coder-ai/chock/issues).
 > Click **Use this template** to start your own.
 
-This is exactly what one command leaves behind in an empty repository:
+This whole file tree is the output of:
 
 ```bash
 pip install chock
@@ -15,7 +24,7 @@ chock init .
 ```
 
 **No policies are installed.** `init` is deliberately wiring-only — the framework ships
-mechanism; policies are content you choose. That is the whole file tree you're looking at:
+mechanism; policies are content you choose. What you're looking at:
 
 | What you see | What it is |
 | :--- | :--- |
