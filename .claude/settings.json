@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:\\Python314\\python.exe\" \"${CLAUDE_PROJECT_DIR}/.chock/bin/sessionstart.py\"",
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}
