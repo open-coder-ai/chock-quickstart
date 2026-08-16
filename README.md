@@ -1,4 +1,6 @@
-# 🛞 chock-quickstart
+<img src=".github/logo.svg" alt="Chock logo" width="90">
+
+# chock-quickstart
 
 > **Demo repository.** This repo exists so you can *see* what [Chock](https://github.com/open-coder-ai/chock)
 > adoption looks like — nothing more. Questions and issues belong on the
