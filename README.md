@@ -1,8 +1,10 @@
 <div align="center">
 
-<img src=".github/logo.svg" alt="Chock logo" width="90">
+<img src=".github/logo.svg" alt="chock-quickstart: exactly what one chock init command leaves behind in an empty repository — the wiring, with no policies installed. The mark is chock's: a wheel held by a chock wedge." width="90">
 
 # chock-quickstart
+
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 **Exactly what one [Chock](https://github.com/open-coder-ai/chock) command leaves behind in an empty repository.**
 
