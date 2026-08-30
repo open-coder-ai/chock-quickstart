@@ -4,7 +4,9 @@
 
 # chock-quickstart
 
+[![Demo repository](https://img.shields.io/badge/demo-repository-lightgrey)](https://github.com/open-coder-ai/chock)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Issues and PRs](https://img.shields.io/badge/issues%20%26%20PRs-chock-8957e5)](https://github.com/open-coder-ai/chock/issues)
 
 **Exactly what one [Chock](https://github.com/open-coder-ai/chock) command leaves behind in an empty repository.**
 
