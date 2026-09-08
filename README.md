@@ -30,6 +30,7 @@ chock sync --repo .   # git never clones hooks — this wires them in
 .
 ├── AGENTS.md
 ├── chock.lock
+├── .gitattributes
 ├── LICENSE
 ├── README.md
 ├── docs/
@@ -48,7 +49,18 @@ chock sync --repo .   # git never clones hooks — this wires them in
 └── .github/
 ```
 
-What each of these is: [`docs/README.md`](docs/README.md).
+The wiring behind that tree: `.agents/policies/` and `.agents/skills/` are what an agent
+reads to work here — policies once you `chock add` some, plus the bundled authoring skills
+(`eval`, `optimize`, `policy-init`, `validate`) it uses to write and test them. `.chock/` is
+the engine's own state: `config.yaml` you're free to edit, plus `registry.json`,
+`coverage.json`, `dependency-allowlist.txt`, and the vendored hook adapter in
+`bin/sessionstart.py` that re-installs hooks on a fresh Claude Code session, since git never
+clones them. `.claude/`, `.gemini/` and `.github/` are thin per-agent wrappers — nothing
+agent-facing lives twice, everything delegates back to the single `AGENTS.md`.
+`.gitattributes` pins generated and hash-attested files to LF, so a pack checks out
+byte-identical whether the clone happens on Linux or Windows.
+
+What each of these is, file by file: [`docs/README.md`](docs/README.md).
 
 Next steps from here:
 
