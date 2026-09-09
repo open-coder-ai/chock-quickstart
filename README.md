@@ -1,14 +1,10 @@
 <div align="center">
 
-<img src=".github/logo.svg" alt="chock-quickstart: exactly what one chock init command leaves behind in an empty repository — the wiring, with no policies installed. The mark is chock's: a wheel held by a chock wedge." width="90">
+<img src=".github/logo.svg" alt="chock-quickstart: exactly what one chock init command leaves behind in an empty repository — the wiring, with no policies installed. The mark is chock's: a wheel held by a chock wedge." width="110">
 
 # chock-quickstart
 
-[![Demo repository](https://img.shields.io/badge/demo-repository-lightgrey)](https://github.com/open-coder-ai/chock)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Issues and PRs](https://img.shields.io/badge/issues%20%26%20PRs-chock-8957e5)](https://github.com/open-coder-ai/chock/issues)
-
-**Exactly what one [Chock](https://github.com/open-coder-ai/chock) command leaves behind in an empty repository.**
+**What `chock init` leaves behind: the wiring exhibit.**
 
 [the framework →](https://github.com/open-coder-ai/chock) ·
 [the full catalog →](https://github.com/open-coder-ai/chock-catalog) ·
@@ -18,29 +14,53 @@
 
 > **Demo repository.** A frozen exhibit of `chock init`, nothing more. Questions and issues
 > belong on the [framework repo](https://github.com/open-coder-ai/chock/issues).
-> Click **Use this template** to start your own.
 
-This whole file tree is the output of:
+## Use this template
+
+Click **Use this template** above, then sync it into your new repo:
 
 ```bash
-pip install chock
-chock init .
+git clone <your-new-repo-url> && cd <your-new-repo>
+chock sync --repo .   # git never clones hooks — this wires them in
 ```
 
-**No policies are installed.** `init` is deliberately wiring-only — the framework ships
-mechanism; policies are content you choose. What you're looking at:
+## What `chock init .` wrote
 
-| What you see | What it is |
-| :--- | :--- |
-| `AGENTS.md` | The one rules file every agent reads (directly, or via its wrapper) |
-| `chock.lock` | Hash-pinned record of installed content — empty until you install some |
-| `.gitattributes` | LF pinning for generated and hash-attested files, so packs check out byte-identical on every platform |
-| `.agents/policies/` | Where policies will live — just the generated `INDEX.md` plus a guardrail `AGENTS.md`/`CLAUDE.md` pair stating the provenance-and-editing contract |
-| `.agents/skills/` | The bundled authoring skills (`eval`, `optimize`, `policy-init`, `validate`) an agent uses to write and test policies, plus the same guardrail pair |
-| `.chock/` | Engine state: `config.yaml` (yours to edit), `registry.json`, `coverage.json`, `dependency-allowlist.txt`, and `bin/sessionstart.py` — the vendored arm-on-clone adapter (git never clones hooks; this re-installs them when a Claude Code session opens). The gate runtime and compiled output appear once a policy is installed |
-| `.claude/`, `.gemini/`, `.github/` | Thin per-agent wrappers delegating to `AGENTS.md` — plus `.claude/skills/`, a generated bridge of `.agents/skills/` for Claude Code's native discovery (each copy carries a `.chock-bridge` ownership marker), and `.claude/settings.json` wiring the SessionStart arm hook |
-| `docs/` | A short adopter-facing guide to the layout |
-| `.git/hooks/` (not visible here) | Pre-commit, pre-merge-commit and pre-push dispatchers, installed by `init` |
+```
+.
+├── AGENTS.md
+├── chock.lock
+├── .gitattributes
+├── LICENSE
+├── README.md
+├── docs/
+│   └── README.md
+├── .agents/
+│   ├── policies/
+│   └── skills/
+├── .chock/
+│   ├── bin/
+│   ├── config.yaml
+│   ├── coverage.json
+│   ├── dependency-allowlist.txt
+│   └── registry.json
+├── .claude/
+├── .gemini/
+└── .github/
+```
+
+The wiring behind that tree: `.agents/policies/` and `.agents/skills/` are what an agent
+reads to work here — policies once you `chock add` some, plus the bundled authoring skills
+(`eval`, `optimize`, `policy-init`, `validate`) it uses to write and test them. `.chock/` is
+the engine's own state: `config.yaml` you're free to edit, plus `registry.json`,
+`coverage.json`, `dependency-allowlist.txt`, and the vendored hook adapter in
+`bin/sessionstart.py` that re-installs hooks on a fresh Claude Code session, since git never
+clones them. `.claude/`, `.gemini/` and `.github/` are thin per-agent wrappers — nothing
+agent-facing lives twice, everything delegates back to the single `AGENTS.md`.
+`.gitattributes` pins generated and hash-attested files to LF, so a pack checks out
+byte-identical whether the clone happens on Linux or Windows.
+
+What each of these is, file by file: [`docs/README.md`](docs/README.md).
 
 Next steps from here:
 
