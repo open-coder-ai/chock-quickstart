@@ -1,6 +1,6 @@
 # Chock setup
 
-This repo uses Chock for agent policy engineering. This folder contains human-readable documentation only. Agents must not read files here.
+This repo uses Chock for agent policy engineering. This folder is human documentation: agents take their rules from `AGENTS.md`, and read the files here on demand — when the task is to change one of them — rather than as part of general work.
 
 ## Structure
 
