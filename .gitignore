@@ -1,0 +1,2 @@
+# chock: the gate outcome log is per machine and grows on every commit
+.chock/log/

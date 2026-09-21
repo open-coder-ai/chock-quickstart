@@ -54,7 +54,7 @@ reads to work here — policies once you `chock add` some, plus the bundled auth
 (`eval`, `optimize`, `policy-init`, `validate`) it uses to write and test them. `.chock/` is
 the engine's own state: `config.yaml` you're free to edit, plus `registry.json`,
 `coverage.json`, `dependency-allowlist.txt`, and the vendored hook adapter in
-`bin/sessionstart.py` that re-installs hooks on a fresh Claude Code session, since git never
+`bin/claude_code.py` that re-installs hooks on a fresh Claude Code session, since git never
 clones them. `.claude/`, `.gemini/` and `.github/` are thin per-agent wrappers — nothing
 agent-facing lives twice, everything delegates back to the single `AGENTS.md`.
 `.gitattributes` pins generated and hash-attested files to LF, so a pack checks out

@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"C:\\Python314\\python.exe\" \"${CLAUDE_PROJECT_DIR}/.chock/bin/sessionstart.py\"",
+            "command": "\"/usr/local/bin/python3\" \"${CLAUDE_PROJECT_DIR}/.chock/bin/claude_code.py\"",
             "timeout": 300
           }
         ]
