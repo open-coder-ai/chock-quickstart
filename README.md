@@ -1,10 +1,8 @@
 <div align="center">
 
-<p><img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/readme/cover-chock-quickstart.png" alt="chock-quickstart: Start a repo with guardrails in 60 seconds. Exactly what chock init leaves behind, then turn on the checks your stack needs. A template repo with no policies preinstalled." width="100%"></p>
+<p><img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/readme/cover-chock-quickstart.png" alt="Chock mark on a dusk-blue background." width="100%"></p>
 
 </div>
-
-<details><summary>Text version</summary>
 
 # Teach your AI agent what not to do.
 
@@ -15,11 +13,6 @@ Open-source guardrails for AI coding agents: rules the agent reads, checks that 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 chock-quickstart is a GitHub template repository: the exact tree that `chock init .` writes into an empty repo, with no policies installed. Chock is open-source application security for code written by AI coding agents. Each check is a deterministic local script, with no model and no upload, and it refuses known vulnerability classes before they are committed. This is a demo repository, a frozen exhibit of `chock init`; questions and issues belong on the [framework repo](https://github.com/open-coder-ai/chock/issues).
-
-</details>
-
-<p><img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/readme/appsec.png" alt="Nine areas Chock checks, application security first, each with the policies that cover it and whether they enforce at commit, in the agent, or only advise." width="100%"></p>
-<details><summary>Text version</summary>
 
 ## Application security for the code your agents write
 
@@ -38,8 +31,6 @@ Coding agents already ask before they run a shell command. What they do not chec
 
 Tiers: `commit` is a git hook or CI gate that exits non-zero. `in-agent` is the agent's pre-tool hook: best-effort, and it fails open. `advisory` is rule text the agent reads. No agent reaches `enforced` today.
 
-</details>
-
 ## Install
 
 chock is on PyPI, but the release there (0.15.2, 30 Sep 2026) is older than the engine this page describes. Install the frozen engine from its commit (Python 3.11 or newer):
@@ -47,9 +38,6 @@ chock is on PyPI, but the release there (0.15.2, 30 Sep 2026) is older than the 
 ```bash
 pip install "chock @ git+https://github.com/open-coder-ai/chock@992711af4cf8d4fd9c4c861f10ef6e53374d75d7"
 ```
-
-<p><img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/readme/adopt.png" alt="Two adoption routes: in your repository with chock init, chock add and chock sync, or in your coding agent as plugins." width="100%"></p>
-<details><summary>Text version</summary>
 
 ### Two ways to adopt it
 
@@ -73,16 +61,11 @@ git clone <your-new-repo-url> && cd <your-new-repo>
 chock sync --repo .   # git never clones hooks, so every clone runs this once
 ```
 
-</details>
-
-<p><img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/readme/quickstart.png" alt="Two commands set up the hooks, then the next commit containing a credential is refused and the rewritten file passes." width="100%"></p>
-<details><summary>Text version</summary>
-
 ## How it works
 
 A policy is a folder of plain files. `chock sync` compiles it into the form each layer can use: rule text in `AGENTS.md`, a pre-tool guard in the agent's own hook where the client has one, git hooks, and a CI gate. A check costs no tokens: it is a script, not a model. A passing check adds nothing to the agent's context, and a refusal adds one short reason naming the fix. The known classes are fixed in the agent's turn rather than in review. Chock adds no new place your code goes: checks run where the agent writes. The agent still sends its context to its own model provider; installing fetches policies once.
 
-The panel above shows the flow once a policy is installed. This template installs none: the refusal text is the gate message of `scan-secrets` in chock-catalog, and the recording below shows a refusal and its fix.
+This template installs no policy. The recording below shows a refusal and its fix once one is installed.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/demo.gif" alt="Terminal recording of chock refusing unsafe commits and accepting the fixed ones." width="760">
@@ -125,16 +108,9 @@ Added by the policies you install, not by this template: secrets, destructive co
 
 The whole catalog is 71 policies: 35 enforced at commit, 11 in the agent (best-effort), 25 advisory (`registry.yaml` in [chock-catalog](https://github.com/open-coder-ai/chock-catalog) at `f25f5a3`). No agent reaches `enforced` today, and every OWASP mapping is partial.
 
-</details>
-
-<p><img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/readme/honest.png" alt="Guardrails, not guarantees: the three tiers, no matrix cell graded enforced, and no OWASP Agentic risk fully covered." width="100%"></p>
-<details><summary>Text version</summary>
-
 ## Guardrails, not guarantees
 
 Tiers: `commit` is a git hook or CI gate that exits non-zero. `in-agent` is the agent's pre-tool hook: best-effort, and it fails open. `advisory` is rule text the agent reads. No agent reaches `enforced` today. OWASP mappings are partial and the engine is frozen at the commit above. Chock does not stop every attack: it closes common, known entry points before they ship.
-
-</details>
 
 ## FAQ for people and agents
 
@@ -160,9 +136,6 @@ Machine-readable sources:
 - [`docs/coverage.md`](https://github.com/open-coder-ai/chock-catalog/blob/main/docs/coverage.md): OWASP coverage
 - Plugin `marketplace.json` in each plugin repo above
 - chock.sh `/llms.txt` and `/api/index.json`: launching soon
-
-<p><img src="https://raw.githubusercontent.com/open-coder-ai/chock/main/docs/assets/readme/family.png" alt="The 13 public repositories of open-coder-ai: core, policies, evidence, plugins, templates and community files." width="100%"></p>
-<details><summary>Text version</summary>
 
 ## Part of open-coder-ai
 
@@ -190,4 +163,3 @@ Issues about this exhibit go to the [framework repo](https://github.com/open-cod
 
 Apache-2.0, see [LICENSE](LICENSE).
 
-</details>
