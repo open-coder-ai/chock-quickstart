@@ -114,19 +114,33 @@ Tiers: `commit` is a git hook or CI gate that exits non-zero. `in-agent` is the 
 
 ## FAQ for people and agents
 
-**Does Chock use an LLM?** No. Each check is a deterministic script. A check costs no tokens; a refusal adds one short reason to the agent's context.
+### Does Chock use an LLM?
 
-**Does my code leave my machine?** Chock adds no new place your code goes. The agent still sends context to its own model provider. `chock add` fetches policies from the catalog once.
+No. Each check is a deterministic script. A check costs no tokens; a refusal adds one short reason to the agent's context.
 
-**Which agents does it work with?** In the repo route, whichever agents read `AGENTS.md`, plus native hooks where the client has them. Plugins cover Claude Code, Copilot, Cursor, Codex and Devin.
+### Does my code leave my machine?
 
-**How do I install it?** The repository route or the plugin route, both in [Install](#install).
+Chock adds no new place your code goes. The agent still sends context to its own model provider. `chock add` fetches policies from the catalog once.
 
-**What does it cost?** Free and open source (Apache-2.0).
+### Which agents does it work with?
 
-**Does it replace SAST or code review?** No. It refuses known classes while the agent writes, so they are fixed before review; keep SAST and review.
+In the repo route, whichever agents read `AGENTS.md`, plus native hooks where the client has them. Plugins cover Claude Code, Copilot, Cursor, Codex and Devin.
 
-**Which OWASP items does it cover?** Every OWASP Agentic (ASI01–ASI10) risk has at least one catalog policy mapped to it, and every mapping is partial: [`docs/coverage.md`](https://github.com/open-coder-ai/chock-catalog/blob/main/docs/coverage.md).
+### How do I install it?
+
+The repository route or the plugin route, both in [Install](#install).
+
+### What does it cost?
+
+Free and open source (Apache-2.0).
+
+### Does it replace SAST or code review?
+
+No. It refuses known classes while the agent writes, so they are fixed before review; keep SAST and review.
+
+### Which OWASP items does it cover?
+
+Every OWASP Agentic (ASI01–ASI10) risk has at least one catalog policy mapped to it, and every mapping is partial: [`docs/coverage.md`](https://github.com/open-coder-ai/chock-catalog/blob/main/docs/coverage.md).
 
 ## For tools and agents
 
