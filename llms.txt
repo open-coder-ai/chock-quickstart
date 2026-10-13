@@ -1,0 +1,19 @@
+# chock-quickstart
+
+> A kill switch for your coding agent's wrong moves.
+
+This GitHub template repository is the exact tree `chock init .` writes into an empty repo, with no policies installed.
+
+## README
+
+- [Install](README.md#install): the repository route and the plugin route
+- [How it works](README.md#how-it-works): what `chock init .` wrote and how to turn on your first guards
+- [What it stops](README.md#what-it-stops)
+- [Guardrails, not guarantees](README.md#guardrails-not-guarantees)
+- [FAQ for people and agents](README.md#faq-for-people-and-agents)
+- [For tools and agents](README.md#for-tools-and-agents): machine-readable sources
+- [Contributing](README.md#contributing)
+
+## Docs
+
+- [chock.sh docs](https://chock.sh/docs): the Chock documentation
