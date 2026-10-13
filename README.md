@@ -6,7 +6,7 @@
 
 # Teach your AI agent what not to do.
 
-Open-source guardrails for AI coding agents: rules the agent reads, checks that run as it writes, and gates at commit and in CI. This template is the wiring `chock init` leaves behind, ready for your first guards.
+A kill switch for your coding agent's wrong moves. This template is the wiring `chock init` leaves behind, ready for your first guards.
 
 [chock](https://github.com/open-coder-ai/chock) · [chock-catalog](https://github.com/open-coder-ai/chock-catalog) · [chock-example](https://github.com/open-coder-ai/chock-example) · chock.sh (launching soon)
 
