@@ -1,6 +1,6 @@
 # chock-quickstart
 
-> A kill switch for your coding agent's wrong moves.
+> Blocks your coding agent's wrong moves before they land.
 
 This GitHub template repository is the exact tree `chock init .` writes into an empty repo, with no policies installed.
 
