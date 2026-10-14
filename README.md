@@ -6,7 +6,7 @@
 
 # Teach your AI agent what not to do.
 
-A kill switch for your coding agent's wrong moves. This template is the wiring `chock init` leaves behind, ready for your first guards.
+Blocks your coding agent's wrong moves before they land. This template is the wiring `chock init` leaves behind, ready for your first guards.
 
 [chock](https://github.com/open-coder-ai/chock) · [chock-catalog](https://github.com/open-coder-ai/chock-catalog) · [chock-example](https://github.com/open-coder-ai/chock-example) · chock.sh (launching soon)
 
