@@ -1,0 +1,51 @@
+# The release check (chock-release, check 2) reads this file's job `check`: keep the name.
+# chock is installed from the pin in README.md so the README stays the single source.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7
+        with:
+          python-version: "3.12"
+
+      - name: Install chock from the README pin
+        run: |
+          pins="$(grep -E -o 'pip install "chock @ git\+https://github\.com/open-coder-ai/chock@[0-9a-f]{40}"' README.md | sort -u)"
+          if [ -z "$pins" ]; then
+            echo "README.md has no 'pip install \"chock @ git+https://github.com/open-coder-ai/chock@<40-hex>\"' line" >&2
+            exit 1
+          fi
+          if [ "$(printf '%s\n' "$pins" | wc -l)" -ne 1 ]; then
+            echo "README.md carries more than one distinct chock pin:" >&2
+            printf '%s\n' "$pins" >&2
+            exit 1
+          fi
+          bash -e -c "$pins"
+
+      - name: chock check (pull request)
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: chock check --repo . --base "$BASE_SHA"
+
+      - name: chock check (push)
+        if: github.event_name != 'pull_request'
+        run: chock check --repo .
+
+      - name: Compiled files match the policies
+        run: chock sync --repo . --check
