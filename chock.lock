@@ -1,5 +1,5 @@
 {
-  "lockfile_version": "1",
+  "lockfile_version": "2",
   "engine": ">=0.1,<0.2",
   "packs": []
 }
