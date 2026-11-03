@@ -1,2 +1,24 @@
 # chock: the gate outcome log is per machine and grows on every commit
 .chock/log/
+# chock: the per-session tool-call log is per machine and never shared
+.chock/state/
+# chock: a stop (`chock stop`) is local to this machine and never committed
+.chock/stop.json
+# chock: the gate runtime and compiled gates are what every hook runs -- tracked even where
+# a global rule (a `bin/` from a Visual Studio or Java template) would ignore them
+!.chock/bin/
+!.chock/bin/**
+!.chock/compiled/
+!.chock/compiled/**
+# chock: installed policies are tracked whole -- a policy's `build/` sub-package must reach every
+# clone, whatever a `build/`, `out/` or `target/` rule elsewhere says
+!.agents/policies/
+!.agents/policies/**
+# chock: bytecode under the policies is per machine (must stay after the rules above)
+.agents/policies/**/__pycache__/
+.agents/policies/**/*.pyc
+# chock: bytecode under the runtime and compiled gates is per machine (must stay after the rules above)
+.chock/bin/**/__pycache__/
+.chock/bin/**/*.pyc
+.chock/compiled/**/__pycache__/
+.chock/compiled/**/*.pyc
