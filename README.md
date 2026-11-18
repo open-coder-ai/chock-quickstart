@@ -36,7 +36,7 @@ Tiers: `commit` is a git hook or CI gate that exits non-zero. `in-agent` is the 
 chock is on PyPI, but the release there (0.15.2, 30 Sep 2026) is older than the engine this page describes. Install the frozen engine from its commit (Python 3.11 or newer):
 
 ```bash
-pip install "chock @ git+https://github.com/open-coder-ai/chock@2f3be6d04349a7ec433657e16a294efc62b51d4f"
+pip install "chock @ git+https://github.com/open-coder-ai/chock@5088f2f17df0c10b3269a68685a3500ffea6516a"
 ```
 
 ### Two ways to adopt it
