@@ -106,7 +106,7 @@ chock check                     # is this repo sound?
 
 Added by the policies you install, not by this template: secrets, destructive commands, unpinned agent components, Java and Kotlin vulnerability classes, accessibility regressions and more. The area-by-area table is in [Application security](#application-security-for-the-code-your-agents-write) above and in the [catalog README](https://github.com/open-coder-ai/chock-catalog#the-policies). For a repo with two policies already installed, see [chock-example](https://github.com/open-coder-ai/chock-example).
 
-The whole catalog is 71 policies: 35 enforced at commit, 11 in the agent (best-effort), 25 advisory (`registry.yaml` in [chock-catalog](https://github.com/open-coder-ai/chock-catalog) at `f25f5a3`). No agent reaches `enforced` today, and every OWASP mapping is partial.
+<!-- policy-count:start -->The whole catalog is 71 policies: 35 enforced at commit, 11 in the agent (best-effort), 25 advisory (`registry.yaml` in [chock-catalog](https://github.com/open-coder-ai/chock-catalog) at `c2925a1`).<!-- policy-count:end --> No agent reaches `enforced` today, and every OWASP mapping is partial.
 
 ## Guardrails, not guarantees
 
